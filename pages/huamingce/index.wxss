@@ -1,0 +1,82 @@
+.huamingce {
+  width: 100%;
+  padding-bottom: 10vw;
+}
+.searchBar {
+  width: 94%;
+  padding: 3vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+}
+.searchBar input {
+  width: 78vw;
+  background-color: #f8f8f8;
+  height: 8vw;
+  border-radius: 4vw;
+  padding: 0 4vw;
+  font-size: 32rpx;
+}
+.searchBar image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 8vw;
+  top: 50%;
+  margin-top: -16rpx;
+}
+
+.import {
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  background-color: #46cfc4;
+  box-shadow: 0 3px 4px 1px #a8fff8;
+  position: fixed;
+  bottom: 5vw;
+  left: 50%;
+  margin-left: -6vw;
+  color: #fff;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ul {
+  padding-top: 14vw;
+  width: 100%;
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+}
+.ul .li {
+  width: 90vw;
+  padding: 0 3vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 1px 1px #a8fff8;
+  margin: 1.5vw 0;
+}
+.li .top {
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 2vw 0;
+}
+.li .middle {
+  display: -webkit-flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 2vw 0;
+}
+.li .bottom {
+  border-top: 1px solid #f8f8f8;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 2vw 0;
+}
+.li .bottom .workNumber {
+  display: -webkit-flex;
+}
+.li .bottom .workTime {
+  display: -webkit-flex;
+}

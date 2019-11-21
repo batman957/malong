@@ -1,0 +1,73 @@
+<view class="gengduozhiwei">
+  <block wx:if="{{!showList}}">
+    <view class="area">
+      <view class="title">职位类别</view>
+        <view class="selectArea"  bindtap="selecteType">
+          <text wx:if="{{!showselectedType}}">请选择职位类别</text>
+          <text wx:if="{{showselectedType}}">{{selectedType}}</text>
+        </view>
+    </view>
+    <view class="hot">
+      <view class="title">职位类型</view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{typeList}}" wx:key="id">
+            <view class="{{num1 === index? 'active': ''}}" data-index="{{index}}" bindtap="switchTypeBtn" data-id="{{item.id}}">{{item.text}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="hot">
+      <view class="title">每月月薪</view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{moneyList}}" wx:key="id">
+            <view class="{{num2 === index? 'active': ''}}"  data-index="{{index}}" bindtap="switchMoneyBtn" data-id="{{item.id}}">{{item.text}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="hot">
+      <view class="title">工作年限</view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{workList}}" wx:key="id">
+            <view class="{{num3 === index? 'active': ''}}"  data-index="{{index}}"  bindtap="switchWorkBtn"  data-label="{{item.text}}">{{item.text}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="hot">
+      <view class="title">学历要求</view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{xueliList}}" wx:key="id">
+            <view class="{{num4 === index? 'active': ''}}"  data-index="{{index}}"  bindtap="switchXueliBtn"  data-label="{{item.text}}">{{item.text}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="operate">
+      <view class="cancelBtn" bindtap="clearSelect">清空选择</view>
+      <view class="confirmBtn" bindtap="save">确定</view>
+    </view>
+  </block>
+  <block wx:if="{{showList}}"></block>
+  <view class="popup" wx:if="{{showType}}" >
+    <view class="mask" bindtap="closePopup"></view>
+    <view class="popup-body"  animation="{{animationData}}">
+      <view class="operatebar">
+        <text bindtap="closePopup">取消</text>
+        <text style="color: #46cfc4;" bindtap="confirmSelected">确定</text>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="changeType">
+        <picker-view-column>
+          <view wx:for="{{list}}" class="picker-item">{{item.label}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{childList}}" class="picker-item">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+.dayin {
+  width: 100%;
+}
+.title {
+  padding: 4vw 0;
+  width: 100%;
+  font-weight: 550;
+  font-size: 34rpx;
+  display: -webkit-flex;
+  justify-content: center;
+}
+.row {
+  padding: 2vw 3vw;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.saveBtn {
+  width: 94%;
+  height: 11vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #46cfc4;
+  color: #fff;
+  border-radius: 1vw;
+  position: absolute;
+  bottom: 5vw;
+  left: 3vw;
+}

@@ -1,0 +1,67 @@
+<view class="shoucang">
+  <view class="tabs">
+    <view class="{{selected === '1'? 'active' : ''}}" data-num="1" bindtap="selectTab">企业收藏</view>
+    <view class="{{selected === '2'? 'active' : ''}}" data-num="2" bindtap="selectTab">职位收藏</view>
+  </view>
+  <block wx:if="{{selected === '1' &&  companyList.length > 0}}">
+    <view class="list">
+      <view class="ul">
+        <block wx:for="{{companyList}}" wx:key="id">
+          <view class="li" bindtap="goToCompany" data-id="{{item.id}}">
+            <view class="left">
+              <image src="{{item.shop_logo}}" />
+            </view>
+            <view class="info">
+              <view class="title">{{item.shop_name}}</view>
+              <view class="company">{{item.type_name}}</view>
+            </view>
+            <view class="right">
+              <image src="../../assets/images/youjiantou.png" class="icon" />
+            </view>
+          </view>
+        </block>
+        <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{selected === '2'  &&    jobList.length > 0}}">
+    <view class="ul zhiwei">
+      <block wx:for="{{jobList}}" wx:key="id">
+        <view class="li" data-id="{{item.id}}" bindtap="goToJob">
+          <view class="toudi-job">
+            <view class="left">
+              <image src="{{item.img_url}}" />
+            </view>
+            <view class="info">
+              <view class="title">{{item.title}}</view>
+              <view class="company">{{item.shop_name}}</view>
+              <view class="tag">
+                <text>{{item.city}}</text>
+                <text>{{item.property}}</text>
+              </view>
+            </view>
+            <view class="right">
+              <text  style="font-size:34rpx;font-weight:550;">{{item.start_salary}}-{{item.end_salary}}</text>
+            </view>
+          </view>
+          <view class="toudi-time">
+            <text>{{item.updated_at}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+    </view>
+  </block>
+  <block wx:if="{{companyList.length < 1 &&    selected === '1'}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+      <view>暂无收藏</view>
+    </view>
+  </block>
+  <block wx:if="{{jobList.length < 1 &&    selected === '2'}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+      <view>暂无收藏</view>
+    </view>
+  </block>
+</view>

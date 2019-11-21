@@ -1,0 +1,181 @@
+.shoucang {
+  width: 100%;
+}
+.tabs {
+  height: 14vw;
+  width: 100%;
+  display: -webkit-flex;
+  border-bottom: 1.5vw solid #f8f8f8;
+}
+
+.tabs view {
+  width: 50vw;
+  height: 14vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.tabs .active {
+  color: #46cfc4;
+  font-weight: 550;
+  font-size: 36rpx;
+}
+
+
+.ul {
+  overflow: auto;
+}
+
+.zhiwei .li {
+  display: -webkit-flex;
+  padding: 0 3vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+  position: relative;
+  flex-flow: column;
+}
+
+.toudi-job {
+  padding: 4vw 0;
+  display: -webkit-flex;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.toudi-job .left {
+  margin-right: 3vw;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.toudi-job .left image {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 10rpx;
+}
+
+.toudi-job .info {
+  display: -webkit-flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.toudi-job .info .title {
+  font-weight: 550;
+}
+
+.toudi-job .company {
+  font-size: 0.85rem;
+  width: 60vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+
+.tag {
+  display: -webkit-flex;
+  justify-content: flex-start;
+}
+
+.tag text {
+  display: block;
+  padding: 0.2vw 1.5vw;
+  background-color: #eaf4f3;
+  font-size: 0.75rem;
+  margin-right: 1vw;
+  border-radius: 4px;
+}
+
+.right {
+  position: absolute;
+  right: 3vw;
+  top: 4vw;
+  color: #46cfc4;
+}
+
+.toudi-time {
+  width: 100%;
+  height: 10vw;
+  background-color: #fff;
+  display: -webkit-flex;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+.list .ul .li {
+  display: -webkit-flex;
+  padding: 4vw 3vw;
+  align-items: center;
+  height: 18vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+  position: relative;
+}
+
+.list .li .left {
+  margin-right: 3vw;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.list .li .left image {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 5px;
+}
+
+.list .li .info {
+  display: -webkit-flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 14vw;
+}
+
+.list .info .title {
+  font-weight: 550;
+}
+
+.list .info .company {
+  color: #999;
+  font-size: 27rpx;
+  width: 60vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+
+.list .li .right {
+  position: absolute;
+  right: 3vw;
+  top: 50%;
+  margin-top: -15rpx;
+}
+.list .li .right image{
+  width: 20rpx;
+  height: 30rpx;
+}
+.empty {
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vw;
+  margin-top: 10vw;
+}
+
+.empty image {
+  width: 40vw;
+  height: auto;
+}
+.noMore {
+  padding: 2vw 0;
+  display: -webkit-flex;
+  justify-content: center;
+  color: #ccc;
+}

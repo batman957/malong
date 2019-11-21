@@ -1,0 +1,34 @@
+<view class="toudi">
+  <block wx:if="{{list.length < 1}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+      <view>暂无投递职位</view>
+    </view>
+  </block>
+  <view class="ul" wx:if="{{list.length > 0}}">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="li" data-id="{{item.id}}" bindtap="goToPage">
+        <view class="toudi-job">
+          <view class="left">
+            <image src="{{item.img_url}}" />
+          </view>
+          <view class="info">
+            <view class="title">{{item.title}}</view>
+            <view class="company">{{item.shop_name}}</view>
+            <view class="tag">
+              <text>{{item.city}}</text>
+              <text>{{item.property}}</text>
+            </view>
+          </view>
+          <view class="right">
+            <text  style="font-size:34rpx;font-weight:550;">{{item.start_salary}}-{{item.end_salary}}</text>
+          </view>
+        </view>
+        <view class="toudi-time">
+          <text>{{item.created_at}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="jibenxinxi">
+  <view class="form">
+    <view class="row">
+      <label for="username">姓名</label>
+      <input type="text" placeholder="请填写姓名" value="{{real_name}}" bindinput="getName"/>
+    </view>
+    <view class="row">
+      <label for="username">性别</label>
+      <input type="text" placeholder="请填写性别" value="{{gender}}" bindinput="getSex" />
+    </view>
+    <view class="row">
+      <label for="birthdat">生日</label>
+      <picker mode="date" value="{{date}}" start="1900-01-01" bindchange="bindDateChange">
+        <input type="text" disabled="{{true}}" placeholder="请选择日期" value="{{birthday}}" />
+      </picker>
+    </view>
+    <view class="row">
+      <label for="area">所在城市</label>
+      <picker mode="region"  bindchange="bindRegionChange">
+        <input type="text" disabled="{{true}}" placeholder="请选择所在城市"  value="{{city}}"/>
+      </picker>
+    </view>
+    <view class="row">
+      <label for="telephone">手机号码</label>
+      <input type="text" placeholder="请填写手机号码" value="{{telephone}}"  bindinput="getTel"/>
+    </view>
+  </view>
+  <view class="saveBtn" bindtap="save">保存</view>
+</view>

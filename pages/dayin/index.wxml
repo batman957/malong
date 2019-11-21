@@ -1,0 +1,45 @@
+<view class="dayin">
+  <view class="qiye">
+    <view class="title">企业信息</view>
+    <view class="row">
+      <view class="left">派遣公司</view>
+      <view class="right">{{enterprise_name}}</view>
+    </view>
+    <view class="row">
+      <view class="left">入职企业</view>
+      <view class="right">{{shop_name}}</view>
+    </view>
+    <view class="row">
+      <view class="left">入职职位</view>
+      <view class="right">{{recruit_name}}</view>
+    </view>
+  </view>
+  <view class="geren">
+    <view class="title">个人信息</view>
+    <view class="row">
+      <view class="left">姓名</view>
+      <view class="right">{{real_name}}</view>
+    </view>
+    <view class="row">
+      <view class="left">电话号码</view>
+      <view class="right">{{telephone}}</view>
+    </view>
+    <view class="row">
+      <view class="left">身份证</view>
+      <view class="right">{{id_card}}</view>
+    </view>
+    <view class="row">
+      <view class="left">开户行</view>
+      <view class="right">{{bank_name}}</view>
+    </view>
+    <view class="row">
+      <view class="left">银行卡号</view>
+      <view class="right">{{bank_card}}</view>
+    </view>
+    <view class="row">
+      <view class="left">预留电话</view>
+      <view class="right">{{bank_phone}}</view>
+    </view>
+  </view>
+  <view class="saveBtn" bindtap="save" wx:if="{{type !== 'check'}}">保存到手机</view>
+</view>

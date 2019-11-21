@@ -1,0 +1,156 @@
+.shaixuan {
+  width: 100%;
+}
+.title {
+  padding: 4vw 3vw;
+  display: -webkit-flex;
+  justify-content: flex-start;
+}
+.content {
+  display: -webkit-flex;
+  padding: 0 3vw;
+  justify-content: space-between;
+}
+input {
+  background-color: #f8f8f8;
+  width: 35vw;
+  padding: 1vw 2vw;
+  text-align: center;
+}
+text {
+  font-weight: 550;
+}
+.btn {
+  width: 94%;
+  height: 10vw;
+  color: #fff;
+  background-color: #46cfc4;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5vw;
+  position: fixed;
+  bottom: 4vw;
+  left: 3vw;
+}
+.search {
+  display: -webkit-flex;
+  align-items: center;
+  padding: 3vw;
+  justify-content: flex-start;
+}
+#search {
+  width: 70%;
+  background-color: #fff;
+}
+.xinzi {
+  width: 100vw;
+  height: 60vw;
+}
+.xinziBtn {
+  position: relative;
+  margin-top: 10vw;
+  margin-left: 3vw;
+  width: 94%;
+  height: 10vw;
+  color: #fff;
+  background-color: #46cfc4;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+}
+
+.bottom {
+  width: 100%;
+  padding-top: 5vw;
+}
+.ul {
+  display: -webkit-flex;
+  flex-flow: column;
+}
+.li {
+  display: -webkit-flex;
+  align-items: center;
+  padding: 2vw 3vw;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8;
+}
+.li .right {
+  display: -webkit-flex;
+  align-items: center;
+}
+.li text {
+  font-weight: normal;
+}
+
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.popup .content{
+  position: fixed;
+  top: 50%;
+  padding: 0;
+  margin-top: -50vw;
+  left: 5vw;
+  width: 90%;
+  height: 100vw;
+  background-color: #fff;
+  z-index: 1001;
+  border-radius: 1.5vw;
+  display: -webkit-flex;
+  flex-flow: column;
+}
+.popup .name {
+  width: 100%;
+  text-align: center;
+  line-height: 16vw;
+  height: 16vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.body {
+  width: 100%;
+  height: 64vw;
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 350;
+}
+.popOperate {
+  width: 100%;
+  height: 20vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.popBtn {
+  padding: 1.5vw 10vw;
+  background-color: #46cfc4;
+  color: #fff;
+  border-radius: 1vw;
+}
+
+.body .row{
+  width: 92%;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+}

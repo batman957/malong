@@ -1,0 +1,70 @@
+<view class="jianli">
+    <view class="top">
+      <view class="avatar">
+        <image src="{{avatar}}" />
+      </view>
+      <text class="name" wx:if="{{real_name}}">{{real_name}}</text>
+      <text class="city"  wx:if="{{city}}">{{city}}</text>
+      <text class="tel"  wx:if="{{telephone}}">{{telephone}}</text>
+      <view class="shezhi"  bindtap="goToSheZhi">
+        <image src="../../assets/images/setting.png" />
+      </view>
+    </view>
+    <view class="middle">
+      <view class="yixiang">
+        <text>求职信息</text>
+          <image class="icon" src="../../assets/images/bianji.png" bindtap="goToqiuzhiyixiang"/>
+      </view>
+      <view  wx:if="{{degree && graduation_school }}">{{graduation_school}} | {{degree}}<text style="color:#999;margin-left:2vw;"  wx:if="{{graduation_time }}">{{graduation_time}}</text></view>
+      <view  wx:if="{{intention_area && job_direction}}">{{intention_area}} | {{job_direction}}</view>
+    </view>
+    <view class="jingyan" ref="jingyan">
+      <view class="yixiang">
+        <text>工作经验</text>
+        <image src="../../assets/images/tianjia.png" class="icon"  bindtap="goTogongzuojingyan"/>
+      </view>
+      <block wx:for="{{experience}}" wx:key="id">
+        <view class="company" bindtap="editgongzuojingyan" data-id="{{item.id}}">
+          <view class="title">
+            <text>{{item.shop_name}}</text>
+            <view class="time">
+              <text>{{item.begin_date}}-{{item.end_date}}</text>
+              <image src="../../assets/images/arrow-gray.png" class="icon" />
+            </view>
+          </view>
+          <view class="job">{{item.recruit_name}}</view>
+          <view class="ul">
+            <view class="li" style="text-indent: 2em;padding-top:0;">{{item.content}}</view>
+            <!-- <view class="li">1.负责小程序界面设计，改版，业务流程疏导，配合开发人员提供页面标注，切图，跟进页面还原度,哈哈哈哈啊哈哈哈哈</view> -->
+          </view>
+        </view>
+        <view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class="middle">
+      <view class="yixiang">
+        <text>教育背景</text>
+        <image class="icon" src="../../assets/images/tianjia.png"  bindtap="goTojiaoyubeijing"/>
+      </view>
+      <view class="company" bindtap="editjiaoyubeijing">
+        <view class="title">
+          <text>{{graduation_school}}</text>
+          <view class="time">
+            <text>2018.05-2019.02</text>
+            <image src="../../assets/images/arrow-gray.png" class="icon" />
+          </view>
+        </view>
+        <view class="job">网络工程</view>
+      </view>
+    </view> -->
+    <view class="middle">
+      <view class="yixiang">
+        <text>自我评价</text>
+        <image class="icon" src="../../assets/images/bianji.png"  bindtap="goTopingjia" data-id="{{id}}" data-evaluation="{{evaluation}}"/>
+      </view>
+      <view class="pingjia">
+        <text wx:if="{{evaluation}}">{{evaluation}}</text>
+        </view>
+    </view>
+</view>

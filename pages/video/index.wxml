@@ -1,0 +1,40 @@
+<view class="videoPage">
+  <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
+    <video id="myVideo" src="{{item.video_url}}" enable-play-gesture  object-fit="fill"></video>
+    <view class="rightPart">
+      <view class="avatar">
+        <image src="../../assets/images/avatar.jpeg" />
+        <image src="../../assets/images/guanzhu.png" class="guanzhu"/>
+      </view>
+      <view class="zan row">
+        <image src="../../assets/images/zan.png" bindtap="confirmZan" wx:if="{{is_zan === false}}"/>
+        <image src="../../assets/images/zan-s.png"  bindtap="cancelZan" wx:if="{{is_zan === true}}"/>
+        <text >888</text>
+
+      </view>
+      <view class="pinglun row">
+        <image src="../../assets/images/pinglun.png" bindtap="showComment"/>
+        <text >888</text>
+      </view>
+      <!-- <view class="avatar"></view> -->
+    </view>
+    <view class="controduce">
+      <view class="author">@小丑joker</view>
+      <view class="content">小丑起源预告片</view>
+    </view>
+  </view>
+  <view class="comment" wx:if="{{showComment}}">
+    <view class="mask"></view>
+    <view class="content">
+      <view class="title">
+        <text>233条评论</text>
+        <image src="../../assets/images/close.png" class="icon" bindtap="closeComment"/>
+      </view>
+      <view class="body"></view>
+      <view class="bottom">
+        <input type="text" placeholder="说点什么吧"/>
+        <image src="../../assets/images/face.png" />
+      </view>
+    </view>
+  </view>
+</view>

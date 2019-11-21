@@ -1,0 +1,39 @@
+<view class="jiezhi">
+  <block wx:if="{{list.length < 1}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+      <view>暂无借支申请，<text style="color:#46cfc4;" bindtap="goToApply">去申请</text></view>
+    </view>
+  </block>
+  <view class="ul" wx:if="{{list.length > 0}}">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="li" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="top">
+          <view class="title">
+            <text>{{item.real_name}}</text>
+          </view>
+          <view class="">{{item.telephone}}</view>
+          <view class="">
+            <text class="yingpin">借支</text>
+            <text style="color: #f00;margin-left:1vw;">{{item.money}}</text>
+          </view>
+        </view>
+        <view class="bottom">
+          <view>
+            <text>{{item.created_at}}</text>
+          </view>
+          <view class="operate">
+            <view class="status" wx:if="{{item.status === 1 }}" style="color:#f86;border-color:#f86;">{{item.status_name}}</view>
+            <view class="status" wx:if="{{item.status === 3 || item.status === 5}}" style="color:#f00;border-color:#f00;">{{item.status_name}}</view>
+            <view class="status" wx:if="{{item.status === 2 ||  item.status === 4  || item.status=== 6}}">{{item.status_name}}</view>
+            <view class="status" wx:if="{{item.status === 7}}">{{item.status_name}}</view>
+            <!-- <view class="unpassBtn" bindtap="showReason" data-id="{{item.id}}">{{item.status_name}}</view>
+
+            <view class="unpassBtn" bindtap="showReason" data-id="{{item.id}}">{{item.status_name}}</view> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="applyBtn" bindtap="goToApply"  wx:if="{{list.length > 0}}">去申请</view>
+</view>

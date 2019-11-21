@@ -1,0 +1,117 @@
+.jianli {
+  width: 100%;
+  padding-bottom: 10vw;
+}
+.top {
+  width: 100%;
+  height: 42vw;
+  padding-top: 5vw;
+  position: relative;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  border-bottom: 1.5vw solid #f8f8f8;
+}
+.avatar image {
+  width: 16vw;
+  height: 16vw;
+  border-radius: 50%;
+  border: 1px solid #f1f1f1;
+}
+.top text {
+  font-size: 28rpx;
+  margin: 0.5vw 0;
+}
+.name {
+  font-size: 34rpx !important;
+  font-weight: 550;
+}
+
+.middle {
+  padding: 2.5vw 3vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+}
+.middle view{
+  padding: 1.5vw 0;
+}
+.yixiang {
+  padding: 3vw 0;
+  font-size: 32rpx;
+  display: -webkit-flex;
+  font-weight: 550;
+  justify-content: space-between;
+  align-items: center;
+}
+.jingyan {
+  padding: 2.5vw 3vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+  position: relative;
+  /* min-height: 60vw; */
+  overflow: hidden;
+}
+.jingyan view {
+  padding: 1vw 0;
+}
+.company {
+  display: -webkit-flex;
+  flex-flow: column;
+  border-bottom: 1px solid #f8f8f8;
+}
+.company .title {
+  font-size: 28rpx;
+  font-weight: 550;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company .time {
+  font-size: 24rpx;
+  color: #999;
+  display: -webkit-flex;
+  align-items: center;
+}
+.time image {
+  margin-left: 10rpx;
+}
+.company .job {
+  padding: 0;
+  color: #999;
+}
+
+.btn {
+  width: 100%;
+  height: 4vw;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 -5px 5px 5px #fff;
+  position: absolute;
+  display: -webkit-flex;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+}
+
+.icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+.pingjia text{
+  width: 94%;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-indent: 2em;
+}
+.top .shezhi image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+}

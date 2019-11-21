@@ -1,0 +1,151 @@
+.searchList {
+  width: 100%;
+  padding-top: 12vw;
+}
+.top {
+  width: 100%;
+  padding-top: 1vw;
+  height: 12vw;
+  display: -webkit-flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+  /* background-color: #46cfc4; */
+}
+.top .location {
+  width: 15%;
+  height: 10vw;
+  padding-left: 3vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.top .right {
+  width: 80%;
+  height: 10vw;
+  position: relative;
+}
+.top input {
+  box-sizing: border-box;
+  height: 10vw;
+  width: 100%;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.searchShow {
+
+}
+
+.searchShow .title {
+  width: 94%;
+  padding: 3vw;
+  font-weight: 550;
+  font-size: 36rpx;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ul {
+  width: 94%;
+  padding: 3vw;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.li {
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 0.5vw 1vw;
+  border-radius: 1vw;
+  margin: 0.5vw;
+}
+.delete {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 3vw;
+  top: 50%;
+  margin-top: -16rpx;
+  z-index: 9;
+}
+
+.condition {
+  width: 94%;
+  padding: 3vw;
+  border-bottom: 1px solid #f8f8f8;
+}
+.condition .left {
+  display: -webkit-flex;
+  align-items: center;
+  padding: 0.5vw 1vw;
+  /* background-color: #f8f8f8; */
+}
+.condition text {
+  margin-right: 1vw;
+}
+.list .list-item {
+  display: -webkit-flex;
+  padding: 4vw 3vw;
+  height: 18vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+  position: relative;
+}
+
+.list-item .left {
+  margin-right: 3vw;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.list-item .left image {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 10rpx;
+}
+
+.list-item .info {
+  display: -webkit-flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info .title {
+  font-weight: 550;
+}
+
+.info .company {
+  font-size: 28rpx;
+  width: 60vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+
+.tag {
+  display: -webkit-flex;
+  justify-content: flex-start;
+}
+
+.tag text {
+  display: block;
+  padding: 0.2vw 1.5vw;
+  background-color: #eaf4f3;
+  font-size: 0.75rem;
+  margin-right: 1vw;
+  border-radius: 4px;
+}
+
+.list-item .right {
+  position: absolute;
+  right: 3vw;
+  top: 4vw;
+  color: #46cfc4;
+}

@@ -1,0 +1,29 @@
+<view class="qiuzhiyixiang">
+  <view class="ul">
+    <view class="li">
+        <label for="">学校名称</label>
+          <input type="text" value="{{schoolName}}" placeholder="请填写学校名称" />
+    </view>
+    <view class="li">
+      <label for="">所学专业</label>
+        <input type="text" value="{{zhuanye}}" placeholder="请填写所学专业" />
+    </view>
+    <view class="li">
+      <label for="">毕业年份</label>
+      <picker mode="date" range-key="label"  bindchange="switchDate" end="2030-01-01">
+        <input type="text" value="{{selectedDate}}" placeholder="请选择" />
+      </picker>
+    </view>
+    <view class="li">
+      <label for="">学历</label>
+      <picker mode="selector"  range="{{xueli}}" range-key="label"  bindchange="switchXueli">
+        <input type="text" value="{{selectedXueli}}" placeholder="请选择" />
+      </picker>
+    </view>
+  </view>
+  <view class="operate" wx:if="{{type === 'edit'}}">
+    <view class="deleteBtn" bindtap="delete">删除</view>
+    <view class="saveBtn" bindtap="save">保存</view>
+  </view>
+  <view class="btn" bindtap="save" wx:if="{{type === 'new'}}">保存</view>
+</view>

@@ -1,0 +1,36 @@
+.qiuzhiyixiang {
+  width: 100%;
+}
+
+.li {
+  display: -webkit-flex;
+  flex-flow: column;
+  padding: 3vw;
+  border-bottom: 1px solid #f8f8f8;
+}
+label {
+  width: 20vw;
+}
+
+textarea {
+  width: 88%;
+  margin: 3vw;
+  padding: 3vw;
+  border: 1px solid #f8f8f8;
+}
+
+.btn {
+  width: 94%;
+  height: 12vw;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 10vw 3vw;
+}
+picker {
+  display: -webkit-flex;
+  align-items: center;
+}

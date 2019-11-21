@@ -1,0 +1,26 @@
+<view class="ul"  wx:if="{{jobList.length > 0}}">
+  <block wx:for="{{jobList}}" wx:key="id">
+    <view class="li" bindtap="goTojob" data-id="{{item.id}}">
+      <view class="left">
+        <image src="{{item.img_url}}" />
+      </view>
+      <view class="info">
+        <view class="title">{{item.title}}</view>
+        <view class="company">{{item.shop_name}}</view>
+        <view class="tag">
+          <text>{{item.city}}</text>
+          <text>{{item.property}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <text  style="font-size:34rpx;font-weight:550;">{{item.start_salary}}-{{item.end_salary}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<block wx:if="{{jobList.length < 1}}">
+  <view class="empty">
+    <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+    <view>暂无相关职位</view>
+  </view>
+</block>

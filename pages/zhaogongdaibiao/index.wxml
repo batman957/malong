@@ -1,0 +1,36 @@
+<view class="zhaogongdaibiao">
+  <view class="qrcode" bindtap="goToPage">
+    <text >我的二维码</text>
+    <image class="icon" src="../../assets/images/arrow.png"/>
+  </view>
+  <view class="yuangong">
+    <view class="title">
+      <image class="icon" src="../../assets/images/yuangong.png" />
+      <text>旗下员工</text>
+    </view>
+    <view class="ul" wx:if="{{list.length > 0}}">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="li">
+          <view class="left">
+            <image src="{{item.avatar}}" wx:if="{{item.avatar}}"/>
+            <image src="../../assets/images/user_avatar.png" wx:if="{{!item.avatar}}"/>
+          </view>
+          <view class="info">
+            <view class="name">{{item.real_name}}</view>
+            <view class="ID">ID: {{item.user_id}}</view>
+          </view>
+          <view class="right">
+            <text>{{item.created_at}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+    </view>
+    <block wx:if="{{list.length < 1}}">
+      <view class="empty">
+        <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+        <view>暂无旗下员工</view>
+      </view>
+    </block>
+  </view>
+</view>

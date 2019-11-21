@@ -1,0 +1,38 @@
+.gongzitiao {
+  width: 100%;
+}
+.empty {
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vw;
+  margin-top: 10vw;
+}
+
+.empty image {
+  width: 40vw;
+  height: auto;
+}
+
+.ul {
+  width: 100%;
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+}
+.li {
+  width: 94%;
+  display: -webkit-flex;
+  align-items: center;
+  padding: 3vw;
+  justify-content: space-between;
+}
+.li .right {
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 10rpx;
+}

@@ -1,0 +1,110 @@
+.shenqingruzhu {
+  width: 100%;
+  padding-bottom: 15vw;
+}
+.applyBtn {
+  width: 94%;
+  height: 11vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  position: fixed;
+  bottom: 3vw;
+  left: 3vw;
+  color: #fff;
+  font-size: 36rpx;
+  letter-spacing: 2vw;
+}
+.row {
+  display: -webkit-flex;
+  width: 94%;
+  padding: 2.5vw 3vw;
+  border-bottom: 1px solid #f8f8f8;
+  position: relative;
+}
+.row .label {
+  height: 1.4rem;
+  width: 68px;
+  margin-right: 2vw;
+  text-align: justify;
+  text-align-last: justify;
+}
+.row .rightLabel {
+  color: #ccc;
+  position: absolute;
+  right: 3vw;
+}
+.row input {
+  padding-left: 2vw;
+  line-height: normal;
+}
+.sendCodeBtn {
+  padding: 1vw 2.5vw;
+  background-color: #46cfc4;
+  color: #fff;
+  border-radius: 1vw;
+  position: absolute;
+  right: 3vw;
+  margin-top: -1vw;
+}
+
+.hasSendCodeBtn {
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  padding: 1vw 0;
+  background-color: #999;
+  color: #fff;
+  border-radius: 1vw;
+  position: absolute;
+  right: 3vw;
+  margin-top: -1vw;
+  z-index: 9;
+}
+.row .right {
+  display: -webkit-flex;
+}
+.row .uploadImg {
+  margin-left: 2vw;
+  margin-top: 2.5vw;
+  display: -webkit-flex;
+  flex-flow: column;
+}
+.row .uploadImg  text{
+  width: 20vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: #ccc;
+  margin-top: 1vw;
+}
+.row .uploadBtn {
+  width: 20vw;
+  height: 20vw;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border: 1.5px solid #ddd;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #46cfc4;
+  font-size: 80rpx;
+}
+textarea {
+  width: 94%;
+  padding: 3vw;
+}
+
+.detailImg {
+  margin-top: 3vw;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.detailImg image {
+  width: 20vw;
+  height: 20vw;
+}

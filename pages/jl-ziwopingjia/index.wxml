@@ -1,0 +1,9 @@
+<view class="qiuzhiyixiang">
+  <view class="ul">
+    <view class="li">
+        <label for="">自我评价</label>
+          <textarea  placeholder="请填写" value="{{evaluation}}" bindinput="getEva"></textarea>
+    </view>
+  </view>
+  <view class="btn" bindtap="save">保存</view>
+</view>

@@ -1,0 +1,45 @@
+.detail {
+  width: 100%;
+  padding-bottom: 15vw;
+}
+.row {
+  padding: 2.5vw 3vw;
+  display: -webkit-flex;
+  border-bottom: 1px solid #f8f8f8;
+  position: relative;
+  align-items: center;
+}
+.row .label {
+  font-size: 32rpx;
+  width: 70px;
+  text-align: justify;
+  text-align-last: justify;
+  margin-right: 20px;
+}
+.icon {
+  position: absolute;
+  right: 3vw;
+  width: 40rpx;
+  height: 40rpx;
+  top: 50%;
+  margin-top: -20rpx;
+}
+.bottom {
+  border-top: 2vw solid #f8f8f8;
+}
+.saveBtn {
+  width: 94vw;
+  height: 11vw;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 5px;
+  position: fixed;
+  bottom: 3vw;
+  left: 3vw;
+  color: #fff;
+  z-index: 99;
+  font-size: 36rpx;
+}

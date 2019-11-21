@@ -1,0 +1,96 @@
+<view class="shaixuan">
+  <block wx:if="{{type === 'zhanghu' || type === 'gongzitiao'}}">
+    <view class="pickTime">
+      <view class="title">选择时间</view>
+      <view class="content">
+        <picker mode="date"  bindchange="selectStartTime" value="{{begin}}">
+          <input type="text" disabled="{{true}}" placeholder="开始时间" value="{{begin}}" />
+        </picker>
+        <text>—</text>
+        <picker mode="date" bindchange="selectEndTime" value="{{end}}">
+          <input type="text" disabled="{{true}}" placeholder="结束时间" value="{{end}}" />
+        </picker>
+      </view>
+    </view>
+    <view class="btn" bindtap="confirmDate">确定</view>
+  </block>
+  <block  wx:if="{{type === 'xinzi'}}">
+    <view class="pickTime xinzi">
+      <view class="search">
+        <label for="search">搜索条件</label>
+        <input id="search" type="text" placeholder="请填写员工姓名 / 手机号 / 身份证号" value="{{keyword}}" bindinput="getKeyword"/>
+      </view>
+      <view class="title">选择时间</view>
+      <view class="content">
+        <picker mode="date" bindchange="selectStartTime" value="{{begin}}">
+          <input type="text" disabled="{{true}}" placeholder="开始时间" value="{{begin}}" />
+        </picker>
+        <text>—</text>
+        <picker mode="date" bindchange="selectEndTime" value="{{end}}">
+          <input type="text" disabled="{{true}}" placeholder="结束时间" value="{{end}}" />
+        </picker>
+      </view>
+      <view class="xinziBtn" bindtap="confirmDate">确定</view>
+    </view>
+    <view class="bottom">
+      <view class="ul">
+        <block wx:for="{{searchList}}" wx:key="id">
+          <view class="li" bindtap="showPop" data-item="{{item}}">
+            <view class="name">{{item.real_name}}</view>
+            <view class="right">
+              <text style="color:#46cfc4;">{{item.status_name}}</text>
+              <image src="../../assets/images/arrow.png" class="icon"/>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <cover-view class="popup" wx:if="{{show}}">
+      <cover-view class="overlay" bindtap="closePop"></cover-view>
+      <cover-view class="content">
+        <cover-view class="name">{{detailInfo.real_name}}</cover-view>
+        <cover-view class="body">
+          <cover-view class="row">
+            <cover-view >手机号:</cover-view>
+            <cover-view>{{detailInfo.telephone}}</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>身份证:</cover-view>
+            <cover-view>{{detailInfo.id_card}}</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>补贴:</cover-view>
+            <cover-view>{{detailInfo.subsidies}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>应发薪资:</cover-view>
+            <cover-view>{{detailInfo.payable_salary}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>个税:</cover-view>
+            <cover-view>{{detailInfo.taxes}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>合计扣款:</cover-view>
+            <cover-view>{{detailInfo.deductions}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>意外险:</cover-view>
+            <cover-view>{{detailInfo.accident_insurance}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>借支:</cover-view>
+            <cover-view style="color:#f00;">{{detailInfo.borrowing}} 元</cover-view>
+          </cover-view>
+          <cover-view class="row">
+            <cover-view>实发薪资:</cover-view>
+            <cover-view style="color:#46cfc4;">{{detailInfo.real_salary}} 元</cover-view>
+          </cover-view>
+        </cover-view>
+        <cover-view class="popOperate">
+          <cover-view class="popBtn" bindtap="closePop">确定</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </block>
+</view>

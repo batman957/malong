@@ -1,0 +1,8 @@
+<view class="qiuzhiyixiang">
+  <view class="row">
+    <label for="type">工作性质</label>
+    <picker mode="selector" value="{{index}}" range="{{type}}"  range-key="label"  bindchange="selectType">
+      <input type="text" disabled="{{true}}" value="{{selectedType}}" placeholder="请选择"/>
+    </picker>
+  </view>
+</view>

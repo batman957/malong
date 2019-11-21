@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/huamingce/index",
+    "pages/huamingce-detail/index",
+    "pages/video/index",
+    "pages/shangmai/index",
+    "pages/wodefabu/index",
+    "pages/shenqingruzhu/index",
+    "pages/chuli/index",
+    "pages/saomazhuce/index",
+    "pages/shenqing/index",
+    "pages/dayin/index",
+    "pages/jiezhi/index",
+    "pages/zhiweiliebiao/index",
+    "pages/searchList/index",
+    "pages/jl-ziwopingjia/index",
+    "pages/jianli/index",
+    "pages/jl-jiaoyubeijing/index",
+    "pages/jl-gongzuojingyan/index",
+    "pages/jl-qiuzhiyixiang/index",
+    "pages/gengduozhiwei/index",
+    "pages/qiuzhiyixiang/index",
+    "pages/ruzhixinxi/index",
+    "pages/gongzitiao/index",
+    "pages/jiezhishenqing/index",
+    "pages/shaixuan/index",
+    "pages/zhuchangwenyuan/index",
+    "pages/wodefensi/index",
+    "pages/wodezhanghu/index",
+    "pages/tupian/index",
+    "pages/zhaogongdaibiao/index",
+    "pages/shoucang/index",
+    "pages/toudi/index",
+    "pages/jibenxinxi/index",
+    "pages/job/index",
+    "pages/company/index",
+    "pages/ruzhuqiye/index",
+    "pages/logs/logs",
+    "pages/account/index",
+    "pages/dingwei/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#46cfc4",
+    "navigationBarTitleText": "鸿福招聘",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#46cfc4",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "./assets/images/zw.png",
+      "selectedIconPath": "./assets/images/zw-s.png",
+      "text": "职位"
+    }, {
+      "pagePath": "pages/account/index",
+      "iconPath": "./assets/images/wd.png",
+      "selectedIconPath": "./assets/images/wd-s.png",
+      "text": "我的"
+    }]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "授权保存图片到相册"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

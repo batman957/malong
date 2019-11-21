@@ -1,0 +1,37 @@
+.fabu {
+  width: 100%;
+}
+.tabs {
+  height: 12vw;
+  width: 100%;
+  display: -webkit-flex;
+  border-bottom: 1.5vw solid #f8f8f8;
+}
+
+.tabs view {
+  width: 50vw;
+  height: 12vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.tabs .active {
+  color: #46cfc4;
+  font-weight: 520;
+  font-size: 34rpx;
+}
+.empty {
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 55vw;
+  margin-top: 5vw;
+}
+
+.empty image {
+  width: 40vw;
+  height: auto;
+}

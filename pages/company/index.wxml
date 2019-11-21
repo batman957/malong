@@ -1,0 +1,78 @@
+<view class="qiye">
+  <view class="top">
+    <view class="avatar">
+      <image src="{{shop_logo}}" wx:if="{{shop_logo}}"/>
+      <image src="../../assets/images/default_shop_logo.png" wx:if="{{!shop_logo}}"/>
+    </view>
+    <view class="info">
+      <view class="title">{{shop_name}}</view>
+      <view class="type">{{type_name}}</view>
+      <view class="number">{{recruit_number}} 个在招职位</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="tabs">
+      <view class="{{selected === '1'? 'active' : ''}}" data-num="1" bindtap="selectTab">公司介绍</view>
+      <view  class="{{selected === '2'? 'active' : ''}}" data-num="2"  bindtap="selectTab">在招职位</view>
+    </view>
+    <block  wx:if="{{selected === '1'}}">
+      <view class="introduce">
+        <view class="title">
+          <image src="../../assets/images/qiye.png" />
+          <text>公司介绍</text>
+        </view>
+        <rich-text class="content" nodes="{{content}}">
+        </rich-text>
+      </view>
+      <view class="dizhi">
+        <view class="title">
+          <image src="../../assets/images/dingweiweizhi.png" />
+          <text>公司地址</text>
+        </view>
+        <view class="locationNav" bindtap="checkMap">
+          <view class="location-title">
+            <text>{{province}}{{city}}{{district}}{{address}}</text>
+          </view>
+          <image src="../../assets/images/youjiantou.png" />
+        </view>
+        <view class="map">
+          <map latitude="{{latitude}}" longitude="{{longitude}}"  markers="{{markers}}"  enable-scroll="{{false}}"  scale="{{16}}"></map>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{selected === '2'}}">
+      <block wx:if="{{hotPosition.length < 1}}">
+        <view class="empty">
+          <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+          <view>暂无在招职位</view>
+        </view>
+      </block>
+      <view class="ul"  wx:if="{{hotPosition.length > 0}}">
+        <block wx:for="{{hotPosition}}" wx:key="id">
+          <view class="li" bindtap="goToJob" data-id="{{item.id}}">
+            <view class="left">
+              <image src="{{item.img_url}}" />
+            </view>
+            <view class="info">
+              <view class="title">{{item.title}}</view>
+              <view class="company">{{item.shop_name}}</view>
+              <view class="tag">
+                <text >{{item.city}}</text>
+                <text>{{item.property}}</text>
+              </view>
+            </view>
+            <view class="right">
+              <text style="font-weight:550;font-size:36rpx;">{{item.start_salary}}-{{item.end_salary}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="starBtn" bindtap="collect">
+    <image src="../../assets/images/shouc1.png" wx:if="{{status === 0}}"/>
+    <image src="../../assets/images/yishouc.png" wx:if="{{status === 1}}"/>
+    <text  wx:if="{{status === 0}}">收藏</text>
+    <text  wx:if="{{status === 1}}">已收藏</text>
+  </view>
+</view>

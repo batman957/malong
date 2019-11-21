@@ -1,0 +1,55 @@
+<view class="gongzitiao">
+  <view class="li">
+    <view class="left">{{date}}</view>
+    <picker mode="date" fields="month" value="{{date}}" bindchange="selectDate">
+      <view class="right" bindtap="goToPage">
+        <text>筛选</text>
+        <image src="../../assets/images/shaixuan.png" class="icon" />
+      </view>
+    </picker>
+  </view>
+  <block wx:if="{{show === false}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix"/>
+      <view >工资条暂未发放</view>
+    </view>
+  </block>
+  <block wx:if="{{show === true}}">
+    <view class="ul">
+      <view class="li">
+        <view class="left">应发薪资</view>
+        <view class="right">{{payable_salary}}</view>
+      </view>
+      <view class="li">
+        <view class="left">补贴</view>
+        <view class="right">{{subsidies}}</view>
+      </view>
+      <view class="li">
+        <view class="left">个税</view>
+        <view class="right">{{taxes}}</view>
+      </view>
+      <view class="li">
+        <view class="left">意外险</view>
+        <view class="right">{{accident_insurance}}</view>
+      </view>
+      <view class="li">
+        <view class="left">借支</view>
+        <view class="right"  style="color:#f00">{{borrowing}}</view>
+      </view>
+      <view class="li">
+        <view class="left">合计扣款</view>
+        <view class="right">{{deductions}}</view>
+      </view>
+      <view class="li">
+        <view class="left" >实发薪资</view>
+        <view class="right"  style="color:#46cfc4">{{real_salary}}</view>
+      </view>
+      <view class="li">
+        <view class="left">发放状态</view>
+        <view class="right">
+          <text style="color: #46cfc4">{{status}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

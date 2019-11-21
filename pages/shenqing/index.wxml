@@ -1,0 +1,52 @@
+<view class="shenqing">
+    <view class="form">
+    <view class="row">
+      <label for="username">姓名</label>
+      <input type="text" placeholder="请填写姓名"  value="{{real_name}}" bindinput="getName"/>
+    </view>
+    <view class="row">
+      <label for="username">电话号码</label>
+      <input type="text" placeholder="请填写电话号码"  value="{{telephone}}" bindinput="getTel"/>
+    </view>
+    <view class="row">
+      <label for="username">验证码</label>
+      <input type="text" placeholder="请填写验证码"  value="{{code}}" bindinput="getCode"/>
+      <view class="sendCodeBtn" bindtap="sendCode"  wx:if="{{hasSend === false}}">获取验证码</view>
+      <view class="hasSendCodeBtn" wx:if="{{hasSend === true}}">{{second}}s</view>
+    </view>
+    <view class="row">
+      <label for="username">身份证号</label>
+      <input type="text" placeholder="请填写身份证号"  value="{{id_card}}" style="width: 66%;" bindinput="getIdCard"/>
+      <image class="icon" src="../../assets/images/camera.png" bindtap="takeIdCard"/>
+    </view>
+    <view class="row">
+      <label for="username">开户行</label>
+      <input type="text" placeholder="请填写开户银行(支行)"  value="{{bank_name}}" bindinput="getBankName"/>
+    </view>
+    <view class="row">
+      <label for="username">银行卡号</label>
+      <input type="text" placeholder="请填写银行卡号"  value="{{bank_card}}" style="width: 66%;" bindinput="{{getBankCard}}"/>
+      <image class="icon" src="../../assets/images/camera.png" bindtap="takeBankCard"/>
+    </view>
+    <view class="row">
+      <label for="username" style="width: 28%;">银行预留电话</label>
+      <input type="text" placeholder="请填写银行预留电话"  value="{{bank_phone}}" bindinput="getBankPhone"/>
+    </view>
+    <view class="row">
+      <label for="">派遣公司</label>
+      <picker mode="selector" range="{{company}}" range-key="title" bindchange="getCompany">
+        <input type="text" value="{{enterprise}}" placeholder="请选择" disabled="{{true}}"/>
+      </picker>
+    </view>
+  </view>
+  <view class="popup" wx:if="{{showPopup}}">
+    <view class="mask" bindtap="closePopup"></view>
+    <view class="popup-body" animation="{{animationData}}">
+      <view class="camera" bindtap="takePhoto">拍照</view>
+      <view class="pictures"  bindtap="takeImg">从相册中选择</view>
+      <view class="cancel" bindtap="closePopup">取消</view>
+    </view>
+  </view>
+  <view class="saveBtn" bindtap="apply">提交</view>
+  <button open-type="getUserInfo" wx:if="{{is_auth === 0}}" class="auth-btn" lang="zh-CN" bindgetuserinfo="readyGetUserInfo"></button>
+</view>

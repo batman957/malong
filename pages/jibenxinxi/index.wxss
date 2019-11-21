@@ -1,0 +1,32 @@
+.jibenxinxi {
+  width: 100%;
+}
+.form {
+  display: -webkit-flex;
+  flex-flow: column;
+  width: 100%;
+}
+.row {
+  width: 100%;
+  padding: 3vw;
+  display: -webkit-flex;
+}
+label {
+  width: 20%;
+}
+.saveBtn {
+  width: 94%;
+  height: 10vw;
+  background-color: #46cfc4;
+  border-radius: 1.5vw;
+  color: #fff;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: -1;
+  bottom: 3vw;
+  left: 3vw;
+  letter-spacing: 2vw;
+  font-size: 1.125rem;
+}

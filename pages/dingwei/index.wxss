@@ -1,0 +1,69 @@
+.dingwei {
+  width: 100%;
+  padding-bottom: 20vw;
+}
+.title {
+  width: 94%;
+  padding: 2.5vw 3vw;
+  font-weight: 550;
+}
+.content .ul view {
+  width: 28vw;
+  height: 9vw;
+  margin: 1.5vw 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+  border: 1px solid #f8f8f8;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+.ul {
+  display: -webkit-flex;
+  padding: 0 2vw;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+.location {
+  width: 100%;
+}
+.content {
+  padding: 1vw 3vw 3vw;
+}
+
+.operate {
+  width: 94%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  height: 20vw;
+  display: -webkit-flex;
+  padding: 0 2vw;
+  align-items: center;
+  justify-content: space-between;
+}
+.operate view {
+  height: 12vw;
+  border-radius: 1.5vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cancelBtn {
+  width: 33vw;
+  color: #333;
+  background-color: #f8f8f8;
+}
+.confirmBtn {
+  width: 55vw;
+  color: #fff;
+  background-color: #46cfc4;
+}
+
+.content .ul .active {
+  background-color: #fff;
+  color: #46cfc4;
+  border: 1px solid #46cfc4;
+}

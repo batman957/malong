@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="top">
+    <view class="searchBar">
+      <view class="location" bindtap="goToPage">
+        <image src="../../assets/images/dw.png" />
+        <text>{{location}}</text>
+      </view>
+      <view class="search">
+        <input type="text" placeholder="搜索职位" placeholder-class="placeholder" disabled="{{true}}"  confirm-type="search" bindtap="startSearch"/>
+      </view>
+    </view>
+    <view class="swiper">
+        <swiper  autoplay="{{true}}"  circular="{{true}}">
+            <block wx:for="{{swipeList}}"  wx:key="id">
+              <swiper-item>
+                <view >
+                  <image src="{{item.img_url}}" bindtap="goToLink" data-link="{{item.link_url}}"/>
+                </view>
+              </swiper-item>
+            </block>
+        </swiper>
+    </view>
+  </view>
+  <view class="middle"></view>
+  <view class="bottom">
+    <view class="recommend">
+      <view class="title-bar">
+        <view class="left">
+          <image src="../../assets/images/qiye.png" />
+          <text style="font-weight:550;font-size: 34rpx;">推荐企业</text>
+        </view>
+        <view class="right" bindtap="goToMoreCompany">更多</view>
+      </view>
+      <view class="content">
+        <view class="ul" wx:if="{{recommend.length > 0}}">
+          <block wx:for="{{recommend}}" wx:key="id">
+            <view class="li"  bindtap="goToCompany" data-id="{{item.id}}">
+              <image src="{{item.shop_logo}}" wx:if="{{item.shop_logo}}"/>
+              <image src="../../assets/images/default_shop_logo.png" wx:else/>
+              <text>{{item.shop_name}}</text>
+            </view>
+          </block>
+        </view>
+        <view style="color: #999;"  wx:if="{{recommend.length < 1}}">该地区暂无推荐企业</view>
+      </view>
+    </view>
+    <view class="hot-position">
+      <view class="title-bar">
+        <view class="left">
+          <image src="../../assets/images/remen.png" />
+          <text style="font-weight:550;font-size: 34rpx;">热门职位</text>
+        </view>
+        <view class="right" bindtap="goTozhiwei">更多</view>
+      </view>
+      <view class="content">
+        <view class="ul" wx:if="{{hotPosition.length > 0}}">
+          <block wx:for="{{hotPosition}}" wx:key="id">
+            <view class="li" bindtap="goToJob" data-id="{{item.id}}">
+              <view class="left">
+                  <image src="{{item.img_url}}" wx:if="{{item.img_url}}"/>
+                  <image src="../../assets/images/default_job_logo.png" wx:else/>
+                </view>
+                <view class="info">
+                  <view class="title">{{item.title}}</view>
+                  <view class="company">{{item.shop_name}}</view>
+                  <view class="tag">
+                    <text>{{item.city}}</text>
+                    <text>{{item.property}}</text>
+                  </view>
+                </view>
+                <view class="right">
+                  <text style="font-size:34rpx;font-weight:550;">{{item.start_salary}}-{{item.end_salary}}</text>
+                </view>
+            </view>
+          </block>
+        </view>
+        <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+        <block wx:if="{{hotPosition.length < 1}}">
+          <view class="empty">
+            <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+            <view style="color: #999;">该地区暂无相关职位</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+<view class="dingwei">
+  <view class="location">
+    <view class="title">
+      <text >当前选择</text>
+    </view>
+    <view class="content">
+      <view class="ul">
+        <view class="{{num === 1 ? 'active' : ''}}" bindtap="selectedNowCity" data-city="{{location}}">{{location}}<text wx:if="{{location !=='全国'}}">市</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="hot">
+    <view class="title">热门城市</view>
+    <view class="content">
+      <view class="ul">
+        <block wx:for="{{hotCity}}" wx:key="id">
+          <view  class="{{num1 === index? 'active' : ''}}" data-index="{{index}}"  bindtap="selectedHotCity" data-city="{{item}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="hot">
+    <view class="title">其他城市A-G</view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{other_ag}}" wx:key="id">
+            <view class="{{num2 === index? 'active' : ''}}" data-index="{{index}}"  bindtap="selectedOtherCityAG" data-city="{{item}}">{{item}}</view>
+          </block>
+        </view>
+      </view>
+  </view>
+  <view class="hot">
+    <view class="title">其他城市H-N</view>
+    <view class="content">
+      <view class="ul">
+        <block wx:for="{{other_hn}}" wx:key="id">
+          <view class="{{num3 === index? 'active' : ''}}" data-index="{{index}}" bindtap="selectedOtherCityHN" data-city="{{item}}">
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="hot">
+    <view class="title">其他城市O-T</view>
+    <view class="content">
+      <view class="ul">
+        <block wx:for="{{other_ot}}" wx:key="id">
+          <view class="{{num4 === index? 'active' : ''}}" data-index="{{index}}" bindtap="selectedOtherCityOT" data-city="{{item}}">
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="hot">
+    <view class="title">其他城市U-Z</view>
+    <view class="content">
+      <view class="ul">
+        <block wx:for="{{other_uz}}" wx:key="id">
+          <view class="{{num5 === index? 'active' : ''}}" data-index="{{index}}" bindtap="selectedOtherCityUZ" data-city="{{item}}">
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="operate">
+    <view class="cancelBtn" bindtap="clearSelect">清空选择</view>
+    <view class="confirmBtn" bindtap="confirmSelect">确定</view>
+  </view>
+</view>

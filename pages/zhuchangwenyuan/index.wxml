@@ -1,0 +1,66 @@
+<view class="zhuchangwenyuan">
+  <navigator url="/pages/chuli/index?title=面试处理&type=ready" hover-class="navigator-hover" class="nav">
+      <view class="title">面试处理</view>
+      <view class="right">
+        <text>{{interview_number}}</text>
+        <image src="../../assets/images/arrow.png" class="icon"/>
+      </view>
+  </navigator>
+  <navigator url="/pages/chuli/index?title=待入职&type=pass" hover-class="navigator-hover" class="nav">
+    <view class="title">待入职</view>
+    <view class="right">
+      <text>{{pending_number}}</text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+  <navigator url="/pages/chuli/index?title=已入职&type=hasJoin" hover-class="navigator-hover" class="nav">
+    <view class="title">已入职</view>
+    <view class="right">
+      <text></text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+  <navigator url="/pages/chuli/index?title=离职申请&type=applyLeave" hover-class="navigator-hover" class="nav">
+    <view class="title">离职申请</view>
+    <view class="right">
+      <text>{{leaving_apply_number}}</text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+  <navigator url="/pages/chuli/index?title=已离职&type=hasLeave" hover-class="navigator-hover" class="nav">
+    <view class="title">已离职</view>
+    <view class="right">
+      <text></text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+  <navigator url="/pages/chuli/index?title=已取消&type=cancel" hover-class="navigator-hover" class="nav">
+      <view class="title">已取消</view>
+      <view class="right">
+        <text></text>
+        <image src="../../assets/images/arrow.png" class="icon"/>
+      </view>
+  </navigator>
+  <view class="middle"></view>
+  <navigator url="/pages/chuli/index?title=借资申请&type=jieqian" hover-class="navigator-hover" class="nav">
+      <view class="title">借资申请</view>
+      <view class="right">
+        <text>{{borrowing_number}}</text>
+        <image src="../../assets/images/arrow.png" class="icon"/>
+      </view>
+  </navigator>
+  <navigator url="/pages/shaixuan/index?type=xinzi" hover-class="navigator-hover" class="nav">
+    <view class="title">薪资发放记录</view>
+    <view class="right">
+      <text></text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+  <navigator url="/pages/huamingce/index" hover-class="navigator-hover" class="nav">
+    <view class="title">花名册</view>
+    <view class="right">
+      <text></text>
+      <image src="../../assets/images/arrow.png" class="icon" />
+    </view>
+  </navigator>
+</view>

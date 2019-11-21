@@ -1,0 +1,40 @@
+<view class="zhanghu">
+  <view class="top">
+    <text class="money">{{total_income}}</text>
+    <text>总提成 (元)</text>
+  </view>
+  <view class="middle">
+    <view>
+      <image src="../../assets/images/shourumingxi.png" class="icon"/>
+      <text>收入明细</text>
+    </view>
+    <view bindtap="shaixuan">
+      <text>筛选</text>
+      <image src="../../assets/images/shaixuan.png"  class="icon"/>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="title">
+      <text>{{mouth}}</text>
+    </view>
+    <view class="ul">
+    <block wx:if="{{list.length < 1}}">
+      <view class="empty">
+        <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+        <view>请选择日期后查看</view>
+      </view>
+    </block>
+      <block wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:key="id">
+        <view class="li">
+          <view class="left">
+            <text class="time">{{item.updated_at}}</text>
+            <text>{{item.title}}</text>
+          </view>
+          <view class="right">
+            <text>+{{item.money}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

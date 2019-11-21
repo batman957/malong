@@ -1,0 +1,109 @@
+<view class="chuli">
+  <view class="ul" wx:if="{{list.length > 0}}">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="li" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="top">
+              <view class="title">
+                <text>{{item.real_name}}</text>
+                <image src="../../assets/images/danjia.png" class="icon addPrice" bindtap="addPrice"  wx:if="{{type !== 'jieqian'}}" data-id="{{item.id}}" />
+                <image src="../../assets/images/wdjl.png" class="icon" wx:if="{{type !== 'jieqian'}}" bindtap="goToJianli" data-id="{{item.id}}"/>
+              </view>
+              <view class="">{{item.telephone}}</view>
+              <view class="">
+                <text class="yingpin"  wx:if="{{type === 'ready' || type === 'pass' || type ==='cancel'}}">应聘 </text>
+                <text  class="yingpin" wx:if="{{type === 'hasJoin' || type === 'applyLeave' || type === 'hasLeave'}}">职位 </text>
+                <text  class="yingpin" wx:if="{{type === 'jieqian'}}">借资 </text>
+                <text style="color: #f00;" wx:if="{{type === 'jieqian'}}">{{item.money}}</text>
+                <text wx:if="{{type !== 'jieqian'}}">{{item.title}}</text>
+                </view>
+            </view>
+            <view class="bottom">
+              <view>
+                <text wx:if="{{type !== 'jieqian'}}">{{item.created_at}}</text>
+                <text  wx:if="{{type === 'jieqian'}}">{{item.created_at}}</text>
+              </view>
+              <view class="operate"  wx:if="{{type === 'ready' || type === 'jieqian'}}">
+                <view class="passBtn"  catchtap="confirmPass"  data-id="{{item.id}}">通过</view>
+                <view class="unpassBtn"  catchtap="showReason" data-id="{{item.id}}">不通过</view>
+              </view>
+              <view class="operate" wx:if="{{type === 'pass'}}">
+                <view class="passBtn" bindtap="confirmPass" data-id="{{item.id}}">确认入职</view>
+                <view class="unpassBtn"  bindtap="cancelPass" data-id="{{item.id}}">取消</view>
+              </view>
+              <view class="operate" wx:if="{{type === 'hasJoin'}}" style="justify-content: flex-end;">
+                <view class="unpassBtn" bindtap="showReason"  data-id="{{item.id}}">离职</view>
+              </view>
+              <view class="operate" wx:if="{{type === 'applyLeave'}}" style="justify-content: flex-end;">
+                <view class="passBtn" bindtap="showDescript" data-id="{{item.id}}" style="margin-right: 2vw;" data-descript="{{item.leaving_reason}}">查看原因</view>
+                <view class="unpassBtn" bindtap="showReason" data-id="{{item.id}}">确认离职</view>
+              </view>
+              <view class="operate" wx:if="{{type === 'hasCancel'}}" style="justify-content: flex-end;">
+                <view class="passBtn" bindtap="showDescript" data-id="{{item.id}}" data-descript="{{item.descript}}">
+                  查看原因
+                </view>
+              </view>
+              <view class="operate" wx:if="{{type === 'hasLeave'}}" style="justify-content: flex-end;">
+                <view class="passBtn" bindtap="showDescript" data-id="{{item.id}}" data-descript="{{item.descript}}">
+                  查看原因
+                </view>
+              </view>
+            </view>
+      </view>
+    </block>
+  </view>
+  <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+  <block wx:if="{{list.length < 1}}">
+    <view class="empty">
+      <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+      <view>暂无相关数据</view>
+    </view>
+  </block>
+  <view class="popup" wx:if="{{showPop}}" >
+    <view class="overlay" bindtap="closePop"></view>
+    <view class="content" animation="{{animationData}}">
+      <view class="title" wx:if="{{type === 'ready' || type === 'jieqian'}}">不通过原因</view>
+      <view class="title" wx:if="{{type === 'hasJoin'}}">离职原因</view>
+      <view class="title" wx:if="{{type === 'applyLeave'}}">离职说明</view>
+      <textarea placeholder="{{type === 'ready' || type === 'jieqian' ? '请填写不通过原因': '请填写离职原因'}}" fixed="{{true}}" value="{{reason}}"bindinput="getReason"></textarea>
+      <view class="operate">
+        <view class="btn" bindtap="cancelPass" data-id="{{item.id}}"f>提交</view>
+      </view>
+    </view>
+  </view>
+  <view class="popup" wx:if="{{showDescriptPop}}">
+    <view class="overlay" bindtap="closeDescript"></view>
+    <view class="content" animation="{{animationData}}">
+      <view class="title">离职原因</view>
+      <textarea disabled="{{true}}" fixed="{{true}}" value="{{descript}}"></textarea>
+    </view>
+  </view>
+  <view class="popupPrice" wx:if="{{showPrice}}">
+    <view class="overlay" bindtap="closePrice"></view>
+    <view class="content" animation="{{animationData}}">
+      <view class="title">信息完善</view>
+      <view class="row">
+        <div class="label">白班单价</div>
+        <input type="number" value="{{white_price}}"placeholder="请填写白班单价" bindinput="getWhitePrice"/>
+      </view>
+      <view class="row">
+        <div class="label">晚班单价</div>
+        <input type="number" value="{{night_price}}"  placeholder="请填写晚班单价"  bindinput="getNightPrice"/>
+      </view>
+      <view class="row">
+        <div class="label">餐补</div>
+        <input type="number" value="{{meal_subsidies}}"  placeholder="请填写餐补"  bindinput="getMeal"/>
+      </view>
+      <view class="row">
+        <div class="label">房补</div>
+        <input type="number" value="{{rent_subsidies}}"  placeholder="请填写房补"  bindinput="getRent"/>
+      </view>
+      <view class="row">
+        <div class="label">其他福利</div>
+        <input type="number" value="{{other_subsidies}}" placeholder="请填写其他福利"  bindinput="getOther"/>
+      </view>
+      <view class="operate">
+        <view class="btn" bindtap="confirmSubmit" data-id="{{item.id}}">提交</view>
+      </view>
+    </view>
+  </view>
+</view>

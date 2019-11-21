@@ -1,0 +1,70 @@
+<view class="ruzhuqiye">
+  <view class="filtrate">
+    <view class="left" style="border-bottom:1px solid #f8f8f8;" bindtap="showFilter">
+      <text >筛选</text>
+      <image src="../../assets/images/shaixuan.png" />
+    </view>
+    <view class="right">
+      <view wx:if="{{region[1]}}">{{region[1]}}</view>
+      <text style="margin:0 1vw;" wx:if="{{typename && region[1]}}">|</text>
+      <view wx:if="{{typename}}">{{typename}}</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="ul" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="li" bindtap="goToCompany" data-id="{{item.id}}">
+          <view class="left">
+            <image src="{{item.shop_logo}}" />
+          </view>
+          <view class="info">
+            <view class="title">{{item.shop_name}}</view>
+            <view class="company">{{item.city}} | {{item.type_name}}</view>
+          </view>
+          <view class="right">
+            <image src="../../assets/images/arrow.png" />
+          </view>
+        </view>
+      </block>
+      <view class="noMore" wx:if="{{finished}}">—— 我是有底线的 ——</view>
+    </view>
+    <block wx:if="{{list.length < 1}}">
+      <view class="empty">
+        <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+        <view style="color: #999;">暂无相关企业</view>
+      </view>
+    </block>
+  </view>
+  <view class="popup" wx:if="{{showfilter}}">
+    <view class="title">
+      <view class="left">
+        <image src="../../assets/images/guanbi.png" bindtap="closeFilter"/>
+      </view>
+      <text>筛选</text>
+    </view>
+    <view class="typeList">
+      <view class="title">
+        <text>行业分类</text>
+        <image src="../../assets/images/xiangxia.png" />
+      </view>
+      <view class="content">
+        <view class="ul">
+          <block wx:for="{{typeList}}" wx:key="value">
+            <view class="{{num === index ? 'active' :''}}" data-index="{{index}}"  data-value="{{item.value}}" data-typename="{{item.label}}" bindtap="selectedType"><text >{{item.label}}</text></view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="area">
+      <view class="title">地区选择</view>
+      <picker mode="region" class="selectArea"  bindchange="bindRegionChange">
+        <text wx:if="{{!region.length}}">请选择地区</text>
+        <view >{{region[1]}} {{region[2]}}</view>
+      </picker>
+    </view>
+    <view class="operate">
+      <view class="cancelBtn" bindtap="clearSelect">清空选择</view>
+      <view class="confirmBtn" bindtap="startSearch">确定</view>
+    </view>
+  </view>
+</view>

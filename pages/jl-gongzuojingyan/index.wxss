@@ -1,0 +1,72 @@
+.qiuzhiyixiang {
+  width: 100%;
+}
+
+.ul {
+  display: -webkit-flex;
+  flex-flow: column;
+}
+.li {
+  display: -webkit-flex;
+  padding: 3vw;
+  border-bottom: 1px solid #f8f8f8;
+}
+label {
+  width: 20vw;
+}
+.operate {
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  padding: 0 3vw;
+  margin-top: 10vw;
+}
+.saveBtn {
+  width: 60%;
+  height: 12vw;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.deleteBtn {
+  width: 35%;
+  height: 12vw;
+  background-color: #f8f8f8;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.btn {
+  width: 94%;
+  height: 12vw;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 10vw 3vw;
+}
+.miaosu {
+  display: -webkit-flex;
+  flex-flow: column;
+  padding: 3vw;
+}
+textarea {
+  height: 260rpx;
+  padding: 3vw;
+  border: 1px solid #f8f8f8;
+  margin-top: 3vw;
+  width: 94%;
+}
+
+picker {
+  display: -webkit-flex;
+  align-items: center;
+}

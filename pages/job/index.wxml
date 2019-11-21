@@ -1,0 +1,61 @@
+<view class="job">
+  <view class="top">
+    <view class="title">
+      <text class="jobName">{{title}}</text>
+      <text  class="xinzi"  style="font-size:36rpx;font-weight:550;">{{start_salary}}-{{end_salary}}</text>
+    </view>
+    <view class="tags">
+      <text>{{city}}</text>
+      <text>{{property}}</text>
+    </view>
+  </view>
+  <view class="middlePart" bindtap="goToCompany">
+    <image src="{{shop_info.shop_logo}}" wx:if="{{shop_info.shop_logo}}"/>
+    <image src="../../assets/images/default_shop_logo.png"  wx:if="{{!shop_info.shop_logo}}"/>
+    <view class="info">
+      <view class="title">{{shop_info.shop_name}}</view>
+      <view class="type">{{shop_info.type_name}}</view>
+      <image src="../../assets/images/youjiantou.png"/>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="jobInfo">
+      <view class="title">职位详情</view>
+      <rich-text class="content" nodes="{{content}}"></rich-text>
+
+      <!-- <view class="ul job-zhize">
+        <view class="li secTitle">岗位职责</view>
+        <block wx:for="{{resList}}" wx:key="*this">
+          <view class="li">{{index+1}}.{{item}}</view>
+        </block>
+      </view>
+      <view class="ul job-fuli">
+        <view class="li secTitle">岗位福利</view>
+        <block wx:for="{{fuliList}}" wx:key="*this">
+          <view class="li">{{index+1}}.{{item}}</view>
+        </block>
+      </view> -->
+    </view>
+    <view class="location">
+      <view class="title"></view>
+      <view class="goToMap" bindtap="openMap">
+        <view class="dingweitubiao"><image src="../../assets/images/dingweiweizhi.png" style="width:32rpx;height:32rpx;"/>{{position}}</view>
+        <image src="../../assets/images/youjiantou.png" />
+      </view>
+    </view>
+  </view>
+  <view class="operate-bar">
+    <button class="share" open-type="share">
+      <image src="../../assets/images/share.png" />
+      <text>分享</text>
+    </button>
+    <view class="star" bindtap="collect">
+      <image src="../../assets/images/shouc1.png" wx:if="{{status === 0}}" />
+      <image src="../../assets/images/yishouc.png" wx:if="{{status === 1}}" />
+      <text wx:if="{{status === 0}}">收藏</text>
+      <text wx:if="{{status === 1}}">已收藏</text>
+    </view>
+    <view class="sendResume" bindtap="delivery"  wx:if="{{!hasDelivery}}">投递简历</view>
+    <view class="hasSendResume" wx:if="{{hasDelivery}}">已投递</view>
+  </view>
+</view>

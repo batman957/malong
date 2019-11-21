@@ -1,0 +1,32 @@
+<view class="account">
+<view class="top">
+  <view class="avatar" wx:if="{{hasInfo === true}}">
+    <image src="{{avatar}}" />
+    <button wx:if="{{is_auth === 0 && !avatar}}" class="fakeAvatar" open-type="getUserInfo" bindgetuserinfo="readyGetUserInfo" lang="zh_CN" ></button>
+  </view>
+  <view class="info" wx:if="{{hasInfo === true}}">
+    <text class="nickname">{{nickName}}</text>
+    <text >ID: {{id}}</text>
+    <text style="font-size:26rpx;matrgin-top:-10rpx;">{{title}}</text>
+  </view>
+  <!-- <view class="shezhi" bindtap="goToSheZhi">
+    <image src="../../assets/images/shezhi.png" />
+  </view> -->
+</view>
+<view class="bottom">
+  <view class="ul">
+    <block wx:for="{{list}}" wx:key="text">
+      <view class="li" bindtap="goToPage" data-path="{{item.path}}" data-index="{{index}}" wx:if="{{index !== 6 && item.show}}">
+        <image src="{{item.img}}" />
+        <text>{{item.text}}</text>
+      </view>
+      <button open-type="contact" wx:if="{{index === 6}}" class="li">
+        <!-- <view class="li" bindtap="goToPage" data-path="{{item.path}}"> -->
+          <image src="{{item.img}}" />
+          <text >{{item.text}}</text>
+        <!-- </view> -->
+      </button>
+    </block>
+  </view>
+</view>
+</view>

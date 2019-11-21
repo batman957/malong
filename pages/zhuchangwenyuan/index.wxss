@@ -1,0 +1,28 @@
+.zhuachangwenyuan {
+  width: 100%;
+}
+.nav {
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  padding: 3vw;
+  border-bottom: 1px solid #f8f8f8;
+}
+.right {
+  display: -webkit-flex;
+  align-items: center;
+}
+.icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+.right text {
+  color: #f00;
+  margin-right: 10rpx;
+}
+.middle {
+  width: 100%;
+  height: 1.5vw;
+  background-color: #f8f8f8;
+}

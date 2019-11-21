@@ -1,0 +1,60 @@
+<view class="qiuzhiyixiang">
+  <view class="ul">
+    <view class="li">
+      <label for="">学历</label>
+      <picker mode="selector" range="{{xueli}}" range-key="label" bindchange="switchXueli">
+        <input type="text" value="{{degree}}" placeholder="请选择" disabled="{{true}}"/>
+      </picker>
+    </view>
+    <view class="li">
+      <label for="">毕业院校</label>
+      <input type="text" value="{{graduation_school}}" placeholder="请填写学校名称" bindchange="switchSchool"/>
+    </view>
+    <view class="li">
+      <label for="">毕业时间</label>
+      <picker mode="date" range-key="label" bindchange="switchDate" end="2030-01-01">
+        <input type="text" value="{{graduation_time}}" placeholder="请选择" disabled="{{true}}"/>
+      </picker>
+    </view>
+    <!-- <view class="li">
+        <label for="xingzhi">工作性质</label>
+        <picker mode="selector" range="{{workType}}" range-key="label"  bindchange="switchWorkType">
+          <input type="text" id="xingzhi" value="{{selectedWorkType}}" placeholder="请选择"  disabled="{{true}}"/>
+        </picker>
+    </view> -->
+    <view class="li">
+      <label for="didian">意向区域</label>
+      <picker mode="region"  bindchange="switchWorkPlace">
+        <input type="text" id="didian" value="{{intention_area}}" placeholder="请选择"  disabled="{{true}}"/>
+      </picker>
+    </view>
+    <view class="li">
+      <label for="leibie">意向职位</label>
+      <input type="text" id="leibie" value="{{job_direction}}" placeholder="请选择"  disabled="{{true}}" bindtap="selectType"/>
+    </view>
+    <!-- <view class="li">
+      <label for="xinzi">期望薪资</label>
+      <picker mode="selector"  range="{{moneyType}}" range-key="label"  bindchange="switchMoneyType">
+        <input type="text" id="xinzi" value="{{selectedMoneyType}}" placeholder="请选择"  disabled="{{true}}"/>
+      </picker>
+    </view> -->
+  </view>
+  <view class="popup" wx:if="{{showType}}">
+    <view class="mask" bindtap="closePopup"></view>
+    <view class="popup-body" animation="{{animationData}}">
+      <view class="operatebar">
+        <text bindtap="closePopup">取消</text>
+        <text style="color: #46cfc4;" bindtap="confirmSelected">确定</text>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="changeType">
+        <picker-view-column>
+          <view wx:for="{{list}}" class="picker-item">{{item.label}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{childList}}" class="picker-item">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view class="btn" bindtap="save">保存</view>
+</view>

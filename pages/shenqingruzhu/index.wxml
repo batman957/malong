@@ -1,0 +1,64 @@
+<view class="shenqingruzhu">
+  <view class="row">
+    <view class="label">会员名称</view>
+    <input type="text" placeholder="请填写会员名称" value="{{real_name}}" bindinput="getName"/>
+  </view>
+  <view class="row">
+    <view class="label">会员微信</view>
+    <input type="text" placeholder="请填写会员微信" value="{{wechat}}" bindinput="getWechat"/>
+  </view>
+  <view class="row">
+    <view class="label">手机号码</view>
+    <input type="text" placeholder="请填写手机号码" value="{{telephone}}" bindinput="getTelephone"/>
+  </view>
+  <view class="row">
+    <view class="label">验证码</view>
+    <input type="number" placeholder="请填写验证码" style="width: 50%;"  value="{{code}}" bindinput="getCode"/>
+    <view class="sendCodeBtn" bindtap="sendCode" wx:if="{{hasSend === false}}">获取验证码</view>
+    <view class="hasSendCodeBtn" wx:if="{{hasSend === true}}">{{second}}s</view>
+  </view>
+  <view class="row">
+    <view class="label">公司名称</view>
+    <input type="text" placeholder="请填写公司名称" value="{{shop_name}}" bindinput="getShopName"/>
+  </view>
+  <view class="row">
+    <view class="label">职位名称</view>
+    <input type="text" placeholder="请填写职位名称"  value="{{recruit_name}}" bindinput="getRecruitName"/>
+  </view>
+  <view class="row">
+    <view class="label">会员头像</view>
+    <view class="uploadImg">
+      <!-- <image src="../../assets/images/avatar.jpeg" /> -->
+      <view class="uploadBtn" bindtap="uploadAvatar">+</view>
+      <text>会员头像</text>
+    </view>
+  </view>
+  <view class="row">
+    <view class="label">身份证</view>
+    <view class="right">
+      <view  class="uploadImg">
+        <view class="uploadBtn"  bindtap="uploadInCardFront">+</view>
+        <!-- <image src="" /> -->
+        <text>身份证正面</text>
+      </view>
+      <view  class="uploadImg" style="margin-left: 20vw;">
+        <!-- <image src="" /> -->
+        <view class="uploadBtn"  bindtap="uploadInCardBack">+</view>
+        <text>身份证反面</text>
+      </view>
+    </view>
+  </view>
+  <view class="row" style="flex-flow: column;">
+    <view class="label">会员介绍</view>
+    <textarea placeholder="请输入会员介绍" value="{{content}}" bindinput="getContent"></textarea>
+  </view>
+    <view class="row" style="flex-flow: column;">
+    <view class="label" style="width: 80px;">会员详情图</view>
+    <view class="rightLabel">已选择0张</view>
+    <view class="right detailImg">
+      <image src="../../assets/images/avatar.jpeg" />
+      <view class="uploadBtn" style="margin-left: 2vw;" bindtap="uploadDetailImg">+</view>
+    </view>
+  </view>
+  <view class="applyBtn">提交</view>
+</view>

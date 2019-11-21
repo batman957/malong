@@ -1,0 +1,224 @@
+.toudi {
+  background-color: #fff;
+  width: 100%;
+}
+
+.ul {
+  overflow: auto;
+}
+
+.li {
+  background-color: #fff;
+  display: -webkit-flex;
+  padding: 0 3vw;
+  border-bottom: 1.5vw solid #f8f8f8;
+  position: relative;
+  flex-flow: column;
+}
+
+.toudi-job {
+  padding: 4vw 0;
+  display: -webkit-flex;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.toudi-job .info {
+  height: 12vw;
+  display: -webkit-flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.toudi-job .info .title {
+  font-weight: 550;
+}
+
+.toudi-job .company {
+  font-size: 24rpx;
+  width: 60vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  color: #888;
+}
+.right {
+  position: absolute;
+  right: 3vw;
+  top: 4vw;
+  color: #46cfc4;
+}
+
+.toudi-time {
+  width: 100%;
+  height: 10vw;
+  background-color: #fff;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 28rpx;
+}
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.content {
+  width: 90vw;
+  min-height: 50vw;
+  background-color: #fff;
+  position: fixed;
+  top: 40%;
+  left: 5vw;
+  margin-top: -24vw;
+  z-index: 99;
+  border-radius: 2vw;
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+}
+.body {
+  width: 90%;
+  min-height: 20vw;
+}
+.popup .title {
+  width: 100%;
+  height: 12vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup .operate {
+  width: 100%;
+  height: 18vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup .operate .btn {
+  padding: 1.5vw 6vw;
+  background-color: #46cfc4;
+  color: #fff;
+  border-radius: 1vw;
+}
+
+.body .row {
+  font-weight: 340;
+  padding: 1vw 0;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.empty {
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vw;
+  margin-top: 10vw;
+}
+
+.empty image {
+  width: 40vw;
+  height: auto;
+}
+.popupApply {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popupApply .overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.popupApply .content {
+  width: 90vw;
+  /* height: 50vw; */
+  background-color: #fff;
+  position: fixed;
+  top: 40%;
+  left: 5vw;
+  margin-top: -24vw;
+  z-index: 11;
+  border-radius: 2vw;
+  display: -webkit-flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.popupApply .title {
+  width: 100%;
+  height: 12vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupApply .row {
+  width: 94%;
+  padding: 3%;
+  display: -webkit-flex;
+  align-items: flex-start;
+}
+.popupApply .row .label {
+  width: 28%;
+}
+.popupApply .row input {
+  border-bottom: 1px solid #ccc;
+}
+textarea {
+  width: 60%;
+  /* min-width: 300px; */
+  height: 18vw;
+  padding: 3vw;
+  background-color: #f8f8f8;
+}
+
+.popupApply .operate {
+  width: 100%;
+  height: 18vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupApply .operate .btn {
+  padding: 1.5vw 6vw;
+  background-color: #46cfc4;
+  color: #fff;
+  border-radius: 1vw;
+}
+.applyBtn {
+  width: 20vw;
+  border: 1px solid #f00;
+  color: #f00;
+  border-radius: 1vw;
+  padding: 0 2vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}

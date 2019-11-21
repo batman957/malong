@@ -1,0 +1,16 @@
+<view class="fabu">
+  <view class="tabs">
+    <view class="{{selected === '1'? 'active' : ''}}" data-num="1" bindtap="selectTab">全部</view>
+    <view class="{{selected === '2'? 'active' : ''}}" data-num="2" bindtap="selectTab">审核中</view>
+    <view class="{{selected === '3'? 'active' : ''}}" data-num="3" bindtap="selectTab">已通过</view>
+    <view class="{{selected === '4'? 'active' : ''}}" data-num="4" bindtap="selectTab">已拒绝</view>
+  </view>
+  <view class="ul">
+    <block wx:if="{{list.length < 1}}">
+      <view class="empty">
+        <image src="../../assets/images/empty.png" class="empty" mode="widthFix" />
+        <view>你还没有发布哦</view>
+      </view>
+    </block>
+  </view>
+</view>

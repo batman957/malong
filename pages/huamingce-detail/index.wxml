@@ -1,0 +1,78 @@
+<view class="detail">
+  <view class="top">
+    <view class="row">
+      <view class="label">姓名</view>
+      <input type="text" value="{{real_name}}" placeholder="请填写姓名" bindinput="getName"/>
+    </view>
+    <view class="row">
+      <view class="label">性别</view>
+      <radio-group class="radio-group" bindchange="selectSex">
+        <radio class="radio" wx:for-items="{{sexs}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+          <text style="margin-right: 5vw;">{{item.label}}</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="row">
+      <view class="label">身份证号</view>
+      <input type="text" value="{{id_card}}" placeholder="请填写身份证号" bindinput="getIdCard" />
+    </view>
+    <view class="row">
+      <view class="label">工号</view>
+      <input type="text" value="{{worker_number}}" placeholder="请填写工号" bindinput="getWorkerNumber" />
+    </view>
+    <view class="row">
+      <view class="label">入职日期</view>
+      <picker mode="date" bindchange="getDate">
+        <input type="text" disabled="{{true}}" value="{{boarding_date}}" placeholder="请选择入职日期" />
+        <image src="../../assets/images/arrow.png" class="icon"/>
+      </picker>
+    </view>
+    <view class="row">
+      <view class="label">家庭住址</view>
+      <input type="text" value="{{address}}" placeholder="请填写家庭住址" bindinput="getAddress" />
+    </view>
+    <view class="row">
+      <view class="label">手机号码</view>
+      <input type="text" value="{{telephone}}" placeholder="请填写手机号码" bindinput="getTelephone" />
+    </view>
+    <view class="row">
+      <view class="label"  style="width: 85px;">紧急联系人</view>
+      <input type="text" value="{{contact_name}}" placeholder="请填写紧急联系人" bindinput="getContactName" />
+    </view>
+    <view class="row">
+      <view class="label" style="width: 85px;">联系人电话</view>
+      <input type="text" value="{{contact_phone}}" placeholder="请填写联系人电话" bindinput="getContactPhone" />
+    </view>
+    <view class="row">
+      <view class="label">银行卡号</view>
+      <input type="text" value="{{worker_number}}" placeholder="请填写银行卡号" bindinput="getBankCard" />
+    </view>
+    <view class="row">
+      <view class="label">开户行</view>
+      <input type="text" value="{{worker_number}}" placeholder="请填写开户行" bindinput="getBankName" />
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="row">
+      <view class="label">白班单价</view>
+      <input type="number" value="{{white_price}}" placeholder="请填写白班单价" bindinput="getWhitePrice" />
+    </view>
+    <view class="row">
+      <view class="label">晚班单价</view>
+      <input type="number" value="{{night_price}}" placeholder="请填写晚班单价" bindinput="getNightPrice" />
+    </view>
+    <view class="row">
+      <view class="label">房补</view>
+      <input type="number" value="{{rent_subsidies}}" placeholder="请填写房补" bindinput="getRent" />
+    </view>
+    <view class="row">
+      <view class="label">餐补</view>
+      <input type="number" value="{{meal_subsidies}}" placeholder="请填写餐补" bindinput="getMeal" />
+    </view>
+    <view class="row">
+      <view class="label">其他补贴</view>
+      <input type="number" value="{{other_subsidies}}" placeholder="请填写其他补贴" bindinput="getOther" />
+    </view>
+  </view>
+  <view class="saveBtn" bindtap="save">修改</view>
+</view>

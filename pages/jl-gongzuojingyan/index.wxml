@@ -1,0 +1,45 @@
+<view class="qiuzhiyixiang">
+  <view class="ul">
+    <view class="li">
+      <label for="">公司名称</label>
+        <input type="text" value="{{shop_name}}" placeholder="请填写公司名称"  bindinput="changeName"/>
+    </view>
+    <view class="li">
+        <label for="">开始时间</label>
+        <picker mode="date"  bindchange="switchStartTime" end="2022-01-01" >
+          <input type="text" value="{{begin_date}}" placeholder="请选择"  disabled="{{true}}"/>
+        </picker>
+    </view>
+    <view class="li">
+      <label for="">结束时间</label>
+      <picker mode="date"  bindchange="switchEndTime" start="{{begin_date ?  begin_date: '2000-01-01'}}">
+        <input type="text" value="{{end_date}}" placeholder="请选择"  disabled="{{true}}"/>
+      </picker>
+    </view>
+    <!-- <view class="li">
+      <label for="">所在行业</label>
+      <picker mode="selector"  range="{{jobType}}" range-key="label"  bindchange="switchJobType">
+        <input type="text" value="{{selectedJobType}}" placeholder="请选择"  disabled="{{true}}"/>
+      </picker>
+    </view> -->
+    <!-- <view class="li">
+      <label for="">职业类型</label>
+      <picker mode="selector"  range="{{workType}}" range-key="label"  bindchange="switchWorkType">
+        <input type="text" value="{{selectedWorkType}}" placeholder="请选择"  disabled="{{true}}"/>
+      </picker>
+    </view> -->
+    <view class="li">
+      <label for="">职位名称</label>
+        <input type="text" value="{{recruit_name}}" placeholder="请填写职位名称"  bindinput="changeRecruit_name"/>
+    </view>
+  </view>
+  <view class="miaosu">
+    <label for="textarea">工作描述</label>
+    <textarea id="textarea" maxlength="-1" placeholder="请填写" value="{{content}}"  bindinput="changeContent"></textarea>
+  </view>
+  <view class="operate" wx:if="{{type === 'edit'}}">
+    <view class="deleteBtn" bindtap="delete">删除</view>
+    <view class="saveBtn" bindtap="save">保存</view>
+  </view>
+  <view class="btn"  bindtap="save" wx:if="{{type === 'add'}}">保存</view>
+</view>

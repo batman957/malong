@@ -1,0 +1,120 @@
+<view class="shenqing">
+  <view class="form" wx:if="{{type === 'apply'}}">
+    <view class="row">
+      <label for="username">借款部门</label>
+      <input type="text" placeholder="请填写借款部门" value="{{shop_name?shop_name: ''}}" class="rightAlign" bindinput="getShopName"/>
+    </view>
+    <view class="row">
+      <label for="username">借支人</label>
+      <input type="text" placeholder="请填写借支人" value="{{real_name? real_name:''}}"  class="rightAlign"  bindinput="getName"/>
+    </view>
+    <view class="row">
+      <label for="username">手机号码</label>
+      <input type="number" placeholder="请填写手机号码"  value="{{telephone?telephone: ''}}"  class="rightAlign"  bindinput="getTel"/>
+    </view>
+    <view class="row">
+      <label for="username">验证码</label>
+      <input type="number" placeholder="请填写验证码" value="{{code}}"  bindinput="getCode"/>
+      <view class="sendCodeBtn" bindtap="sendCode" wx:if="{{hasSend === false}}">获取验证码</view>
+      <view class="hasSendCodeBtn" wx:if="{{hasSend === true}}">{{second}}s</view>
+    </view>
+    <view class="row">
+      <label for="username">借支金额</label>
+      <input type="text" placeholder="请填写借支金额" value="{{money}}" bindinput="getMoney"/>
+    </view>
+    <view class="row">
+      <label for="username">借支事由</label>
+      <input type="text" placeholder="请填写借支事由" value="{{reason}}" bindinput="getReason"/>
+    </view>
+    <!-- <view class="row">
+      <label for="username">收款人</label>
+      <input type="text" placeholder="请填写收款人" />
+    </view> -->
+    <view class="row">
+      <label for="username">身份证</label>
+      <input type="text" placeholder="请填写收款人身份证号" style="width: 70%" value="{{id_card}}" bindinput="getIdCard"/>
+      <image class="icon" src="../../assets/images/camera.png" bindtap="takeImg"/>
+    </view>
+    <view class="row">
+      <label for="username">银行卡</label>
+      <input type="text" placeholder="请填写收款人银行卡号"  style="width: 70%"  value="{{bank_card}}" bindinput="getBankCard"/>
+      <image class="icon" src="../../assets/images/camera.png"  bindtap="takePhoto"/>
+    </view>
+    <view class="row">
+      <label for="username" style="width: 28%;">还款日期</label>
+      <input type="text" placeholder="请选择还款日期" value="发薪日"  class="rightAlign" disabled="{{true}}"/>
+    </view>
+        <view class="row">
+      <label for="username" style="width: 28%;">还款方式</label>
+      <input type="text" placeholder="请选择还款方式" value="工资扣除"  class="rightAlign" disabled="{{true}}"/>
+    </view>
+  </view>
+  <view class="form" wx:if="{{type === 'detail'}}">
+    <!-- <view class="row">
+      <label for="username">借款部门</label>
+      <input type="text" value="{{shop_name}}" class="rightAlign" disabled="{{true}}"/>
+    </view> -->
+    <view class="detailRow">
+      <view for="username">借支人</view>
+      <view class="rightLabel" >{{real_name}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username">手机号码</view>
+      <view  class="rightLabel">{{telephone}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username">借支金额</view>
+      <view class="rightLabel" style="color:#f00;">{{money}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username">借支事由</view>
+      <view value=""  class="rightLabel">{{reason}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username">身份证</view>
+      <view class="rightLabel">{{id_card}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username">银行卡</view>
+      <view class="rightLabel" >{{bank_card}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username" style="width: 28%;">还款日期</view>
+      <view class="rightLabel">{{repay_time}}</view>
+    </view>
+    <view class="detailRow">
+      <view for="username" style="width: 28%;">还款方式</view>
+      <view class="rightLabel" >{{repay_type}}</view>
+    </view>
+    <block wx:if="{{!name}}">
+      <view class="status" wx:if="{{status === 1}}" style="color:#f86;border-color:#f86;">{{status_name}}</view>
+      <view class="status" wx:if="{{status === 3 || status === 5}}"  style="color:#f00;border-color:#f00;">{{status_name}}</view>
+      <view class="status" wx:if="{{status === 2 || status === 4 || status === 6}}">{{status_name}}</view>
+      <view class="reason" wx:if="{{status === 3 ||  status === 5}}">不通过原因:<text style="color:#f00;margin-left:1vw;">{{reason}}</text></view>
+    </block>
+    <view wx:if="{{name}}" class="operate">
+      <view class="passBtn" bindtap="passApply">通过</view>
+      <view class="unPassBtn"  bindtap="showReason">不通过</view>
+    </view>
+
+  </view>
+  <view class="popup" wx:if="{{showPopup}}">
+    <view class="mask" bindtap="closePopup"></view>
+    <view class="popup-body" animation="{{animationData}}">
+      <view class="camera" bindtap="takePhoto">拍照</view>
+      <view class="pictures" bindtap="takeImg">从相册中选择</view>
+      <view class="cancel" bindtap="closePopup">取消</view>
+    </view>
+  </view>
+  <view class="saveBtn" bindtap="apply" wx:if="{{type === 'apply'}}">提交</view>
+  <view class="popupReason" wx:if="{{showPop}}">
+    <view class="overlay" bindtap="closePop"></view>
+    <view class="content" animation="{{animationData1}}">
+      <view class="title">不通过原因</view>
+      <textarea placeholder="请填写不通过原因" fixed="{{true}}" value="{{unPassReason}}" bindinput="getUnPassReason"></textarea>
+      <view class="operate">
+        <view class="btn" bindtap="cancelPass" data-id="{{item.id}}">提交</view>
+      </view>
+    </view>
+  </view>
+</view>

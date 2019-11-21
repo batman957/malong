@@ -1,0 +1,59 @@
+<view class="searchList">
+  <view class="top">
+    <view class="location" bindtap="goToDingwei">
+      <text>厦门</text>
+      <image src="../../assets/images/sanjiao.png" class="icon"/>
+    </view>
+    <view class="right">
+      <input type="text" auto-focus placeholder="搜索公司/职位" bindblur="confirmSearch"  bindinput="startInput" value="{{value}}"/>
+      <image src="../../assets/images/delete-gray.png" class="icon  delete" wx:if="{{showDelete}}" bindtap="deleteInput"/>
+    </view>
+  </view>
+  <view class="searchShow" wx:if="{{showHistory}}">
+    <view class="title">
+      <text >历史搜索</text>
+      <image src="../../assets/images/delete-black.png" class="icon" bindtap="clearHistory"/>
+    </view>
+    <view class="ul">
+      <block wx:for="{{searchHistory}}" wx:key="*this">
+        <view class="li" wx:if="{{item !== ''}}" bindtap="ItemConfirmSearch">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="searchShow"  wx:if="{{showHistory}}">
+    <view class="title">热门搜索</view>
+    <view class="ul">
+      <block wx:for="{{searchHot}}" wx:key="*this">
+        <view class="li">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="searchResult" wx:if="{{showList}}">
+    <view class="condition">
+      <view class="left" bindtap="goToPage">
+        <text>筛选</text>
+        <image src="../../assets/images/shaixuan.png" class="icon"/>
+      </view>
+    </view>
+    <view class="list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="list-item">
+          <view class="left">
+            <image src="{{item.img}}" />
+          </view>
+          <view class="info">
+            <view class="title">{{item.title}}</view>
+            <view class="company">{{item.company}}</view>
+            <view class="tag">
+              <text>{{item.city}}</text>
+              <text>{{item.type}}</text>
+            </view>
+          </view>
+          <view class="right">
+            <text>{{item.money}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

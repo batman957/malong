@@ -1,0 +1,71 @@
+.qiuzhiyixiang {
+  width: 100%;
+}
+
+.ul {
+  display: -webkit-flex;
+  flex-flow: column;
+}
+.li {
+  display: -webkit-flex;
+  padding: 3vw;
+  border-bottom: 1px solid #f8f8f8;
+}
+label {
+  width: 20vw;
+}
+.btn {
+  width: 94%;
+  height: 12vw;
+  background-color: #46cfc4;
+  border-radius: 1vw;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 15vw 3vw;
+}
+picker {
+  display: -webkit-flex;
+  align-items: center;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+}
+
+.popup .mask {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 66;
+}
+
+.popup-body {
+  width: 100%;
+  /* height: 100vw; */
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.popup-body .operatebar {
+  width: 94%;
+  display: -webkit-flex;
+  padding: 3vw;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+}
+
+.picker-item {
+  line-height: 50px;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
